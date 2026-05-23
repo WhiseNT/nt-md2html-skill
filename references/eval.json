@@ -1,0 +1,93 @@
+{
+  "skill_name": "nt-md2html",
+  "version": "2.1",
+  "evaluation_criteria": {
+    "rendering_accuracy": {
+      "weight": 0.35,
+      "description": "Markdown到HTML转换的准确性",
+      "checkpoints": [
+        "widget语法正确解析",
+        "围栏组件正确闭合",
+        "内联组件正确识别",
+        "属性值正确处理"
+      ]
+    },
+    "component_usage": {
+      "weight": 0.25,
+      "description": "组件选择和使用的合理性",
+      "checkpoints": [
+        "根据内容类型选择合适组件",
+        "避免不必要的组件化",
+        "组件嵌套使用正确",
+        "自定义组件按需创建"
+      ]
+    },
+    "output_quality": {
+      "weight": 0.25,
+      "description": "最终输出的质量和完整性",
+      "checkpoints": [
+        "生成.md和.html两个文件",
+        "HTML结构完整",
+        "样式应用正确",
+        "响应式布局适配"
+      ]
+    },
+    "syntax_correctness": {
+      "weight": 0.15,
+      "description": "Widget语法和属性的正确性",
+      "checkpoints": [
+        "围栏标记:::正确使用",
+        "属性使用双引号",
+        "属性格式符合规范",
+        "特殊字符正确转义"
+      ]
+    }
+  },
+  "common_errors": [
+    {
+      "error_type": "missing_fence_close",
+      "description": "围栏组件未正确闭合",
+      "example": ":::card{title=\"错误\"} 内容",
+      "correct": ":::card{title=\"正确\"} 内容 :::",
+      "penalty": 0.3
+    },
+    {
+      "error_type": "single_quote_in_attributes",
+      "description": "属性值使用单引号",
+      "example": "@btn[按钮]{variant='primary'}",
+      "correct": "@btn[按钮]{variant=\"primary\"}",
+      "penalty": 0.2
+    },
+    {
+      "error_type": "missing_required_attributes",
+      "description": "缺少必填属性",
+      "example": "@step{number=\"1\"}",
+      "correct": "@step{number=\"1\", title=\"标题\", description=\"描述\"}",
+      "penalty": 0.25
+    },
+    {
+      "error_type": "wrong_component_choice",
+      "description": "选择了不合适的组件",
+      "example": "对简单文本使用围栏组件",
+      "correct": "根据内容复杂度选择组件类型",
+      "penalty": 0.15
+    }
+  ],
+  "optimization_hints": {
+    "development": {
+      "reduce_description_lines": true,
+      "reference_placement": "top",
+      "quick_examples": true
+    },
+    "production": {
+      "full_documentation": true,
+      "comprehensive_examples": true,
+      "edge_cases_coverage": true
+    }
+  },
+  "reference_priority": [
+    "widget-syntax.md",
+    "widgets.json",
+    "advanced-config.md"
+  ]
+}

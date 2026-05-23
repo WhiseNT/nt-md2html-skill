@@ -1,0 +1,525 @@
+{
+  "card": {
+    "description": "带标题的卡片容器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-card\"><div class=\"mhs-card-title\">{{title}}</div><div class=\"mhs-card-body\">{{content}}</div></div>",
+    "defaults": {
+      "title": ""
+    }
+  },
+  "alert": {
+    "description": "警告提示框",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-alert mhs-alert-{{type}}\"><div class=\"mhs-alert-icon\"></div><div class=\"mhs-alert-body\"><strong>{{title}}</strong>{{content}}</div></div>",
+    "defaults": {
+      "type": "info",
+      "title": ""
+    }
+  },
+  "details": {
+    "description": "可折叠详情面板",
+    "syntax": "fence",
+    "template": "<details class=\"mhs-details\"><summary>{{title}}</summary><div class=\"mhs-details-body\">{{content}}</div></details>",
+    "defaults": {
+      "title": "展开详情"
+    }
+  },
+  "badge": {
+    "description": "内联标签/徽章",
+    "syntax": "inline",
+    "template": "<span class=\"mhs-badge mhs-badge-{{variant}}\">{{content}}</span>",
+    "defaults": {
+      "variant": "default"
+    }
+  },
+  "kbd": {
+    "description": "键盘按键样式",
+    "syntax": "inline",
+    "template": "<kbd class=\"mhs-kbd\">{{content}}</kbd>",
+    "defaults": {}
+  },
+  "columns": {
+    "description": "多栏布局容器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-columns cols-{{cols}}\">{{content}}</div>",
+    "defaults": {
+      "cols": "2"
+    }
+  },
+  "btn": {
+    "description": "按钮",
+    "syntax": "inline",
+    "template": "<a href=\"{{href}}\" class=\"mhs-btn mhs-btn-{{variant}}{{#if size}} mhs-btn-{{size}}{{/if}}\">{{content}}</a>",
+    "defaults": {
+      "variant": "primary",
+      "size": "",
+      "href": ""
+    }
+  },
+  "top": {
+    "description": "返回顶部链接",
+    "syntax": "inline",
+    "template": "<a href=\"#top\" class=\"mhs-btn mhs-btn-{{variant}}{{#if size}} mhs-btn-{{size}}{{/if}}\">{{content}}</a>",
+    "defaults": {
+      "variant": "ghost",
+      "size": "",
+      "content": "↑ 返回顶部"
+    }
+  },
+  "progress": {
+    "description": "进度条",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-progress\"><div class=\"mhs-progress-bar {{variant}}\" style=\"width: {{percent}}%\"></div></div>",
+    "defaults": {
+      "percent": "50",
+      "variant": ""
+    }
+  },
+  "quote": {
+    "description": "引用块",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-quote\"><div class=\"mhs-quote-icon\">\"</div><div class=\"mhs-quote-text\">{{content}}</div><div class=\"mhs-quote-author\">{{author}}</div></div>",
+    "defaults": {
+      "author": ""
+    }
+  },
+  "callout": {
+    "description": "强调提示框",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-callout mhs-callout-{{type}}\"><div class=\"mhs-callout-icon\">{{icon}}</div><div><div class=\"mhs-callout-title\">{{title}}</div><div class=\"mhs-callout-body\">{{content}}</div></div></div>",
+    "defaults": {
+      "icon": "!",
+      "title": "",
+      "type": ""
+    }
+  },
+  "steps": {
+    "description": "步骤指示器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-steps\">{{content}}</div>",
+    "defaults": {}
+  },
+  "step": {
+    "description": "单个步骤项",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-step {{active}}\"><div class=\"mhs-step-number\">{{number}}</div><div class=\"mhs-step-title\">{{title}}</div><div class=\"mhs-step-description\">{{description}}</div></div>",
+    "defaults": {
+      "number": "1",
+      "title": "",
+      "description": "",
+      "active": ""
+    }
+  },
+  "avatar": {
+    "description": "头像",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-avatar {{size}}\">{{content}}</div>",
+    "defaults": {
+      "size": ""
+    }
+  },
+  "stats": {
+    "description": "统计卡片组",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-stats\">{{content}}</div>",
+    "defaults": {}
+  },
+  "stat": {
+    "description": "单个统计项",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-stat-item\"><div class=\"mhs-stat-value\">{{value}}</div><div class=\"mhs-stat-label\">{{label}}</div></div>",
+    "defaults": {
+      "value": "0",
+      "label": ""
+    }
+  },
+  "toc": {
+    "description": "目录",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-toc\"><div class=\"mhs-toc-title\">{{title}}</div>{{content}}</div>",
+    "defaults": {
+      "title": "目录"
+    }
+  },
+  "features": {
+    "description": "功能特性网格",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-feature-grid\">{{content}}</div>",
+    "defaults": {}
+  },
+  "feature": {
+    "description": "单个功能卡片",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-feature-card\"><div class=\"mhs-feature-icon\">{{icon}}</div><div class=\"mhs-feature-title\">{{title}}</div><div class=\"mhs-feature-description\">{{description}}</div></div>",
+    "defaults": {
+      "icon": "*",
+      "title": "",
+      "description": ""
+    }
+  },
+  "tabs": {
+    "description": "标签页容器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-tabs\"><div class=\"mhs-tabs-list\">{{tabs}}</div>{{panels}}</div>",
+    "defaults": {}
+  },
+  "beta": {
+    "description": "实验性标签",
+    "syntax": "inline",
+    "template": "<span class=\"mhs-badge mhs-badge-{{variant}}\">@beta {{content}}</span>",
+    "defaults": {
+      "variant": "warning",
+      "content": ""
+    }
+  },
+  "timeline": {
+    "description": "时间轴容器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-timeline\">{{content}}</div>",
+    "defaults": {}
+  },
+  "timeitem": {
+    "description": "时间轴节点",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-timeline-item\"><div class=\"mhs-timeline-time\">{{time}}</div><div class=\"mhs-timeline-marker\"></div><div class=\"mhs-timeline-content\"><div class=\"mhs-timeline-title\">{{title}}</div><div class=\"mhs-timeline-body\">{{content}}</div></div></div>",
+    "defaults": {
+      "time": "00:00",
+      "title": ""
+    }
+  },
+  "tooltip": {
+    "description": "悬浮提示/术语表词汇",
+    "syntax": "inline",
+    "template": "<span class=\"mhs-tooltip\" data-tooltip=\"{{text}}\">{{content}}</span>",
+    "defaults": {
+      "text": ""
+    }
+  },
+  "kanban": {
+    "description": "看板容器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-kanban\">{{content}}</div>",
+    "defaults": {}
+  },
+  "kancol": {
+    "description": "看板列",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-kanban-col\"><div class=\"mhs-kanban-col-header\">{{title}}</div><div class=\"mhs-kanban-col-body\">{{content}}</div></div>",
+    "defaults": {
+      "title": "列名"
+    }
+  },
+  "ticket": {
+    "description": "看板任务卡片",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-ticket\"><div class=\"mhs-ticket-header\"><span class=\"mhs-ticket-id\">{{id}}</span><span class=\"mhs-badge mhs-badge-{{status}}\">{{status}}</span></div><div class=\"mhs-ticket-title\">{{title}}</div><div class=\"mhs-ticket-body\">{{content}}</div></div>",
+    "defaults": {
+      "id": "TASK-1",
+      "title": "",
+      "status": "default"
+    }
+  },
+  "drag-card": {
+    "description": "可拖拽的交互卡片 (参考 html-gen)",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-drag-card\" draggable=\"true\" ondragstart=\"event.dataTransfer.setData('text/plain', event.target.id)\"><div class=\"mhs-drag-handle\">⋮⋮</div><div class=\"mhs-card-title\">{{title}}</div><div class=\"mhs-card-body\">{{content}}</div></div>",
+    "defaults": {
+      "title": "可拖拽卡片"
+    }
+  },
+  "grid": {
+    "description": "自适应网格布局",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-grid\" style=\"grid-template-columns: repeat(auto-fit, minmax({{min_width}}px, 1fr)); gap: {{gap}}px;\">{{content}}</div>",
+    "defaults": {
+      "min_width": "300",
+      "gap": "24"
+    }
+  },
+  "hero": {
+    "description": "现代 Hero 区域",
+    "syntax": "fence",
+    "template": "<section class=\"mhs-hero\"><div class=\"mhs-hero-content\"><h1>{{title}}</h1><p class=\"mhs-hero-subtitle\">{{subtitle}}</p><div class=\"mhs-hero-actions\">{{content}}</div></div><div class=\"mhs-hero-visual\">{{visual}}</div></section>",
+    "defaults": {
+      "title": "标题",
+      "subtitle": "这是副标题，请替换为你的内容。",
+      "visual": ""
+    }
+  },
+  "chart": {
+    "description": "轻量级可视化图表占位符 (支持 CSS 渲染)",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-chart-container\"><div class=\"mhs-chart-title\">{{title}}</div><div class=\"mhs-chart-bars\">{{content}}</div></div>",
+    "defaults": {
+      "title": "数据统计"
+    }
+  },
+  "input-group": {
+    "description": "交互式表单组",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-input-group\"><label>{{label}}</label><input type=\"{{type}}\" placeholder=\"{{placeholder}}\" class=\"mhs-input\" /></div>",
+    "defaults": {
+      "label": "输入标签",
+      "type": "text",
+      "placeholder": "请输入..."
+    }
+  },
+  "comparison-grid": {
+    "description": "对比网格",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-comparison-grid\"><div class=\"mhs-comparison-header\"><div class=\"pro-head\">支持 (Pro)</div><div class=\"con-head\">限制 (Con)</div></div><div class=\"mhs-comparison-body\">{{content}}</div></div>",
+    "defaults": {}
+  },
+  "comparison-row": {
+    "description": "对比行",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-comparison-row\"><div class=\"pro-cell\">{{pro}}</div><div class=\"con-cell\">{{con}}</div></div>",
+    "defaults": {
+      "pro": "",
+      "con": ""
+    }
+  },
+  "metric-card": {
+    "description": "指标统计卡片",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-metric-block\"><div class=\"mhs-metric-title\">{{title}}</div><div class=\"mhs-metric-value\">{{value}}</div>{{#if badge}}<div class=\"mhs-badge-group\"><span class=\"mhs-metric-badge\">{{badge}}</span></div>{{/if}}</div>",
+    "defaults": {
+      "title": "指标",
+      "value": "N/A",
+      "badge": ""
+    }
+  },
+  "explorations": {
+    "description": "探索容器 (带编号头部的文章容器)",
+    "syntax": "fence",
+    "template": "<article class=\"mhs-exploration\"><div class=\"mhs-exploration-header\"><span class=\"mhs-num\">{{num}}</span><h2 class=\"mhs-exploration-title\">{{title}}</h2></div><div class=\"mhs-exploration-body\">{{content}}</div></article>",
+    "defaults": {
+      "num": "01",
+      "title": "探索项"
+    }
+  },
+  "terminal": {
+    "description": "模拟终端输出窗口",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-terminal\"><div class=\"mhs-terminal-header\"><div class=\"dot dot-r\"></div><div class=\"dot dot-y\"></div><div class=\"dot dot-g\"></div><span class=\"mhs-terminal-title\">{{title}}</span></div><div class=\"mhs-terminal-body\">{{content}}</div></div>",
+    "defaults": {
+      "title": "bash"
+    }
+  },
+  "prompt": {
+    "description": "提示词展示区块（prompt-block 别名）",
+    "syntax": "fence",
+    "template": "<aside class=\"mhs-prompt-block\"><div class=\"mhs-prompt-label\">User Prompt</div><div class=\"mhs-prompt-content\">{{content}}</div></aside>",
+    "defaults": {}
+  },
+  "comparison": {
+    "description": "对比网格（comparison-grid 别名）",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-comparison-grid\"><div class=\"mhs-comparison-header\"><div class=\"pro-head\">支持 (Pro)</div><div class=\"con-head\">限制 (Con)</div></div><div class=\"mhs-comparison-body\">{{content}}</div></div>",
+    "defaults": {}
+  },
+  "prompt-block": {
+    "description": "提示词/指令展示区块",
+    "syntax": "fence",
+    "template": "<aside class=\"mhs-prompt-block\"><div class=\"mhs-prompt-label\">User Prompt</div><div class=\"mhs-prompt-content\">{{content}}</div></aside>",
+    "defaults": {}
+  },
+  "recommendation": {
+    "description": "建议/结论区块",
+    "syntax": "fence",
+    "template": "<section class=\"mhs-recommendation\"><h3 class=\"mhs-rec-title\">{{title}}</h3><div class=\"mhs-rec-body\">{{content}}</div></section>",
+    "defaults": {
+      "title": "Recommendation"
+    }
+  },
+  "modal": {
+    "description": "模态弹窗容器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-modal-wrapper\"><input type=\"checkbox\" id=\"mhs-modal-{{id}}\" class=\"mhs-modal-toggle\"><div class=\"mhs-modal-overlay\"><label for=\"mhs-modal-{{id}}\" class=\"mhs-modal-backdrop\"></label><div class=\"mhs-modal\"><div class=\"mhs-modal-header\"><span class=\"mhs-modal-title\">{{title}}</span><label for=\"mhs-modal-{{id}}\" class=\"mhs-modal-close\">&times;</label></div><div class=\"mhs-modal-body\">{{content}}</div>{{#if footer}}<div class=\"mhs-modal-footer\">{{footer}}</div>{{/if}}</div></div></div><label for=\"mhs-modal-{{id}}\" class=\"mhs-btn mhs-btn-primary mhs-modal-trigger\">{{trigger}}</label>",
+    "defaults": {
+      "id": "1",
+      "title": "弹窗标题",
+      "trigger": "打开弹窗",
+      "footer": ""
+    }
+  },
+  "panel": {
+    "description": "次级面板/抽屉容器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-panel-wrapper\"><input type=\"checkbox\" id=\"mhs-panel-{{id}}\" class=\"mhs-panel-toggle\"><div class=\"mhs-panel-overlay\"><label for=\"mhs-panel-{{id}}\" class=\"mhs-panel-backdrop\"></label><div class=\"mhs-panel mhs-panel-{{position}}\"><div class=\"mhs-panel-header\"><span class=\"mhs-panel-title\">{{title}}</span><label for=\"mhs-panel-{{id}}\" class=\"mhs-panel-close\">&times;</label></div><div class=\"mhs-panel-body\">{{content}}</div>{{#if footer}}<div class=\"mhs-panel-footer\">{{footer}}</div>{{/if}}</div></div></div><label for=\"mhs-panel-{{id}}\" class=\"mhs-btn mhs-btn-primary mhs-panel-trigger\">{{trigger}}</label>",
+    "defaults": {
+      "id": "1",
+      "title": "面板标题",
+      "trigger": "打开面板",
+      "position": "right",
+      "footer": ""
+    }
+  },
+  "modal-btn": {
+    "description": "弹窗/面板触发按钮（用于自定义触发位置）",
+    "syntax": "inline",
+    "template": "<label for=\"mhs-modal-{{target}}\" class=\"mhs-btn mhs-btn-{{variant}} mhs-modal-trigger\">{{content}}</label>",
+    "defaults": {
+      "target": "1",
+      "variant": "primary",
+      "content": "打开"
+    }
+  },
+  "panel-btn": {
+    "description": "面板触发按钮（用于自定义触发位置）",
+    "syntax": "inline",
+    "template": "<label for=\"mhs-panel-{{target}}\" class=\"mhs-btn mhs-btn-{{variant}} mhs-panel-trigger\">{{content}}</label>",
+    "defaults": {
+      "target": "1",
+      "variant": "primary",
+      "content": "打开面板"
+    }
+  },
+  "mermaid": {
+    "description": "Mermaid 图表（支持思维导图、流程图等）",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-mermaid\"><pre class=\"mermaid\">{{content}}</pre></div>",
+    "defaults": {}
+  },
+  "mindmap": {
+    "description": "Mermaid 思维导图（mermaid 的快捷方式）",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-mermaid\"><pre class=\"mermaid\">mindmap\nroot(({{root}}))\n{{content}}</pre></div>",
+    "defaults": {
+      "root": "中心主题"
+    }
+  },
+  "status-report": {
+    "description": "工程状态报告头部（标题、标签、日期范围、仓库信息）",
+    "syntax": "fence",
+    "template": "<header class=\"mhs-status-header\"><div class=\"mhs-status-header-top\"><h1 class=\"mhs-status-title\">{{title}}</h1>{{#if tag}}<span class=\"mhs-status-tag\">{{tag}}{{/if}}</span></div><div class=\"mhs-status-meta\"><span class=\"mhs-status-date\">{{date}}</span>{{#if repo}}<span class=\"mhs-status-repo\">{{repo}}</span>{{/if}}</div></header>",
+    "defaults": {
+      "title": "Engineering Status",
+      "tag": "",
+      "date": "",
+      "repo": ""
+    }
+  },
+  "kpi-row": {
+    "description": "KPI 指标卡片行容器",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-kpi-row\">{{content}}</div>",
+    "defaults": {}
+  },
+  "kpi-card": {
+    "description": "单个 KPI 指标卡片（数值 + 标签 + 变化量）",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-kpi-card\"><div class=\"mhs-kpi-value\">{{value}}</div><div class=\"mhs-kpi-label\">{{label}}</div>{{#if delta}}<div class=\"mhs-kpi-delta {{delta_trend}}\">{{delta}}</div>{{/if}}{{#if sub}}<div class=\"mhs-kpi-sub\">{{sub}}</div>{{/if}}</div>",
+    "defaults": {
+      "value": "0",
+      "label": "Metric",
+      "delta": "",
+      "delta_trend": "",
+      "sub": ""
+    }
+  },
+  "highlights": {
+    "description": "亮点/重点成就列表区域",
+    "syntax": "fence",
+    "template": "<section class=\"mhs-highlights\"><h2 class=\"mhs-highlights-title\">{{title}}</h2><div class=\"mhs-highlights-body\">{{content}}</div></section>",
+    "defaults": {
+      "title": "Highlights"
+    }
+  },
+  "velocity-chart": {
+    "description": "周速度图表（每日 PR/提交柱状图）",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-velocity\"><div class=\"mhs-velocity-header\"><h3 class=\"mhs-velocity-title\">{{title}}</h3></div><div class=\"mhs-velocity-chart\" role=\"img\" aria-label=\"{{aria_label}}\"><div class=\"mhs-velocity-bars\">{{content}}</div></div><div class=\"mhs-velocity-labels\"><div class=\"mhs-velocity-note\">{{note}}</div></div></div>",
+    "defaults": {
+      "title": "Velocity",
+      "aria_label": "Weekly velocity chart",
+      "note": ""
+    }
+  },
+  "vbar": {
+    "description": "速度图单根柱子",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-vbar-wrapper\"><div class=\"mhs-vbar\" style=\"height: {{height}}%\" {{#if label}}title=\"{{label}}\"{{/if}}><span class=\"mhs-vbar-value\">{{value}}</span></div><div class=\"mhs-vbar-day\">{{day}}</div></div>",
+    "defaults": {
+      "value": "0",
+      "height": "0",
+      "day": "",
+      "label": ""
+    }
+  },
+  "carryover": {
+    "description": "待办/遗留事项容器（In review / Blocked / Slipped）",
+    "syntax": "fence",
+    "template": "<section class=\"mhs-carryover\"><h2 class=\"mhs-carryover-title\">{{title}}</h2><div class=\"mhs-carryover-grid\">{{content}}</div></section>",
+    "defaults": {
+      "title": "Carryover"
+    }
+  },
+  "carryover-item": {
+    "description": "单个遗留事项卡片",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-carryover-item\"><div class=\"mhs-carryover-item-header\"><span class=\"mhs-carryover-status mhs-carryover-{{status}}\">{{status}}</span></div><div class=\"mhs-carryover-item-title\">{{title}}</div><div class=\"mhs-carryover-item-desc\">{{content}}</div>{{#if assignee}}<div class=\"mhs-carryover-item-assignee\">· {{assignee}}</div>{{/if}}</div>",
+    "defaults": {
+      "status": "default",
+      "title": "",
+      "assignee": ""
+    }
+  },
+  "svg": {
+    "description": "SVG 插图容器（支持内联 SVG 代码，带标题和说明）",
+    "syntax": "fence",
+    "template": "<figure class=\"mhs-svg-figure {{variant}}\"><div class=\"mhs-svg-wrap\">{{content}}</div>{{#if caption}}<figcaption class=\"mhs-svg-caption\">{{caption}}{{#if meta}} <span class=\"mhs-svg-meta\">{{meta}}</span>{{/if}}</figcaption>{{/if}}</figure>",
+    "defaults": {
+      "variant": "",
+      "caption": "",
+      "meta": ""
+    }
+  },
+  "svg-inline": {
+    "description": "行内 SVG 图标（直接嵌入原始 SVG 代码）",
+    "syntax": "inline",
+    "template": "<span class=\"mhs-svg-inline {{size}}\" aria-hidden=\"true\">{{content}}</span>",
+    "defaults": {
+      "size": ""
+    }
+  },
+  "numbered-section": {
+    "description": "大号编号章节（01-06 风格，用于计划文档的章节分隔）",
+    "syntax": "inline",
+    "template": "<div class=\"mhs-numbered-section\"><span class=\"mhs-ns-num\">{{num}}</span><h2 class=\"mhs-ns-title\">{{title}}</h2></div>",
+    "defaults": {
+      "num": "01",
+      "title": ""
+    }
+  },
+  "milestone-card": {
+    "description": "里程碑卡片（时间范围 + 标题 + 内容 + 标签）",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-milestone\"><div class=\"mhs-milestone-header\"><span class=\"mhs-milestone-time\">{{time}}</span>{{#if tags}}<div class=\"mhs-milestone-tags\">{{tags}}{{/if}}</div></div><h3 class=\"mhs-milestone-title\">{{title}}</h3><div class=\"mhs-milestone-body\">{{content}}</div></div>",
+    "defaults": {
+      "time": "",
+      "title": "",
+      "tags": ""
+    }
+  },
+  "open-question": {
+    "description": "开放问题项（问题 + 决策信息）",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-open-q\"><p class=\"mhs-open-q-text\">{{question}}</p>{{#if decision_with}}<div class=\"mhs-open-q-decision\">Decide with · <strong>{{decision_with}}</strong>, before <strong>{{before}}</strong></div>{{/if}}</div>",
+    "defaults": {
+      "question": "",
+      "decision_with": "",
+      "before": ""
+    }
+  },
+  "eval": {
+    "description": "代码执行器（安全执行 Python 表达式并显示结果）",
+    "syntax": "fence",
+    "template": "<div class=\"mhs-eval\"><div class=\"mhs-eval-header\"><span class=\"mhs-eval-label\">{{title}}</span></div><div class=\"mhs-eval-input\"><pre>{{code}}</pre></div><div class=\"mhs-eval-output\"><pre>{{result}}</pre></div></div>",
+    "defaults": {
+      "title": "Eval",
+      "code": "",
+      "result": ""
+    }
+  }
+}

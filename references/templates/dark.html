@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="mhs-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>{{css}}</style>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.esm.min.mjs';
+mermaid.initialize({ 
+  startOnLoad: true,
+  theme: 'dark',
+  themeVariables: {
+    primaryColor: '#252320',
+    primaryTextColor: '#faf9f5',
+    primaryBorderColor: '#3a3835',
+    lineColor: '#8e8b82',
+    secondaryColor: '#1f1e1b',
+    tertiaryColor: '#181715'
+  },
+  flowchart: { useMaxWidth: true, curve: 'basis' },
+  mindmap: { useMaxWidth: true, padding: 0 },
+  sequenceDiagram: { wrap: true, width: 200 }
+});
+</script>
+</head>
+<body>
+<article class="nt-md2html-content">
+{{content}}
+</article>
+</body>
+</html>

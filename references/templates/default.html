@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>{{css}}</style>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.esm.min.mjs';
+mermaid.initialize({ 
+  startOnLoad: true,
+  theme: 'default',
+  themeVariables: {
+    primaryColor: '#4A90D9',
+    primaryTextColor: '#ffffff',
+    primaryBorderColor: '#3a7bc8',
+    lineColor: '#87867F',
+    secondaryColor: '#50C878',
+    tertiaryColor: '#FF6B6B',
+    quaternaryColor: '#F5A623',
+    fontSize: '14px'
+  },
+  flowchart: { useMaxWidth: true, curve: 'basis' },
+  mindmap: {
+    useMaxWidth: true,
+    padding: 20,
+    nodeMaxWidth: 200
+  },
+  sequenceDiagram: { wrap: true, width: 200 }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const svgs = document.querySelectorAll('.mhs-mermaid svg');
+    svgs.forEach(svg => {
+      const texts = svg.querySelectorAll('text');
+      texts.forEach(t => {
+        if (!t.getAttribute('fill') || t.getAttribute('fill') === 'none' || t.getAttribute('fill') === 'transparent') {
+          t.setAttribute('fill', '#141413');
+        }
+      });
+      const foreignObjects = svg.querySelectorAll('foreignObject');
+      foreignObjects.forEach(fo => {
+        fo.style.overflow = 'visible';
+        const divs = fo.querySelectorAll('div.nodeLabel');
+        divs.forEach(d => {
+          d.style.color = '#141413';
+          d.style.fontSize = '14px';
+        });
+      });
+    });
+  }, 500);
+});
+</script>
+</head>
+<body>
+<article class="nt-md2html-content">
+{{content}}
+</article>
+</body>
+</html>
